@@ -1,1 +1,1 @@
-# japabox
+Firmware for Japa Box
