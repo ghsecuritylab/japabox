@@ -1,0 +1,4 @@
+AR19DD~1.EXE: error: Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/armgcc/MK66FN2M0xxx18_flash.ld: No such file or directory
+mingw32-make[2]: *** [debug/hello_world.elf] Error 1
+mingw32-make[1]: *** [CMakeFiles/hello_world.elf.dir/all] Error 2
+mingw32-make: *** [all] Error 2

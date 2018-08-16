@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<EmbeddedProfile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+  <ToolchainVersion>
+    <GCC>7.2.0</GCC>
+    <GDB>8.0.1</GDB>
+    <Revision>3</Revision>
+  </ToolchainVersion>
+  <BspID>com.visualgdb.bsp.in-place</BspID>
+  <BspVersion>1.0</BspVersion>
+  <McuID>MK66FN2M0VMD18</McuID>
+  <BSPSubdirectory>BSP</BSPSubdirectory>
+  <MCUDefinitionFile>K66F18.xml</MCUDefinitionFile>
+  <MCUProperties>
+    <Entries />
+  </MCUProperties>
+  <BSPSourceFolderName>Device-specific files</BSPSourceFolderName>
+  <InPlaceMCU>
+    <ID>MK66FN2M0VMD18</ID>
+    <UserFriendlyName>MK66FN2M0VMD18</UserFriendlyName>
+    <CompilationFlags>
+      <PreprocessorMacros>
+        <string>ARM_MATH_CM4</string>
+        <string>MK66FN2M0VMD18</string>
+        <string>CPU_MK66FN2M0VMD18</string>
+      </PreprocessorMacros>
+      <IncludeDirectories>
+        <string>drivers</string>
+        <string>drivers/K66</string>
+        <string>thirdparty/Kinetis-SDK/CMSIS/Include</string>
+        <string>thirdparty/Kinetis-SDK/devices/MK66F18</string>
+      </IncludeDirectories>
+      <CFLAGS />
+      <CXXFLAGS />
+      <LDFLAGS>--specs=nano.specs --specs=nosys.specs</LDFLAGS>
+      <ASFLAGS>-mfpu=fpv4-sp-d16</ASFLAGS>
+      <LinkerScript>MK66FN2M0xxx18_flash.ld</LinkerScript>
+      <COMMONFLAGS>-mcpu=cortex-m4 -mthumb -mfloat-abi=soft</COMMONFLAGS>
+      <EnableLinkerGroups>true</EnableLinkerGroups>
+    </CompilationFlags>
+    <AdditionalSourceFiles />
+    <AdditionalHeaderFiles>
+      <string>$$SYS:BSP_ROOT$$/platform/CMSIS/Include/arm_common_tables.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/CMSIS/Include/arm_const_structs.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/CMSIS/Include/arm_math.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/CMSIS/Include/core_cm0plus.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/CMSIS/Include/core_cm4.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/CMSIS/Include/core_cm7.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/CMSIS/Include/core_cmFunc.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/CMSIS/Include/core_cmInstr.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/CMSIS/Include/core_cmSimd.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/devices/fsl_device_registers.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/devices/MK66F18/include/fsl_bitaccess.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/devices/MK66F18/include/MK66F18.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/devices/MK66F18/include/MK66F18_extension.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/devices/MK66F18/include/MK66F18_features.h</string>
+      <string>$$SYS:BSP_ROOT$$/platform/devices/MK66F18/startup/system_MK66F18.h</string>
+    </AdditionalHeaderFiles>
+    <AdditionalSystemVars>
+      <SysVarEntry>
+        <Key>com.sysprogs.bspoptions.arm.core</Key>
+        <Value>M4</Value>
+      </SysVarEntry>
+      <SysVarEntry>
+        <Key>com.sysprogs.arm.kinetis.gpio_prefix</Key>
+        <Value>PT</Value>
+      </SysVarEntry>
+    </AdditionalSystemVars>
+    <ConfigurableProperties>
+      <PropertyGroups>
+        <PropertyGroup>
+          <Properties>
+            <PropertyEntry xsi:type="Enumerated">
+              <Name>Execute from</Name>
+              <UniqueID>com.sysprogs.bspoptions.primary_memory</UniqueID>
+              <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+              <SuggestionList>
+                <Suggestion>
+                  <UserFriendlyName>FLASH</UserFriendlyName>
+                  <InternalValue>flash</InternalValue>
+                </Suggestion>
+                <Suggestion>
+                  <UserFriendlyName>SRAM</UserFriendlyName>
+                  <InternalValue>sram</InternalValue>
+                </Suggestion>
+              </SuggestionList>
+              <DefaultEntryIndex>0</DefaultEntryIndex>
+              <AllowFreeEntry>false</AllowFreeEntry>
+            </PropertyEntry>
+            <PropertyEntry xsi:type="Enumerated">
+              <Name>Floating point support</Name>
+              <UniqueID>com.sysprogs.bspoptions.arm.floatmode</UniqueID>
+              <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+              <SuggestionList>
+                <Suggestion>
+                  <UserFriendlyName>Software</UserFriendlyName>
+                  <InternalValue>-mfloat-abi=soft</InternalValue>
+                </Suggestion>
+                <Suggestion>
+                  <UserFriendlyName>Hardware</UserFriendlyName>
+                  <InternalValue>-mfloat-abi=hard</InternalValue>
+                </Suggestion>
+                <Suggestion>
+                  <UserFriendlyName>Unspecified</UserFriendlyName>
+                  <InternalValue />
+                </Suggestion>
+              </SuggestionList>
+              <DefaultEntryIndex>0</DefaultEntryIndex>
+              <AllowFreeEntry>false</AllowFreeEntry>
+            </PropertyEntry>
+            <PropertyEntry xsi:type="Boolean">
+              <Name>Disable Watchdog</Name>
+              <UniqueID>com.sysprogs.bspoptions.wdog</UniqueID>
+              <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+              <DefaultValue>true</DefaultValue>
+              <ValueForTrue>DISABLE_WDOG</ValueForTrue>
+            </PropertyEntry>
+            <PropertyEntry xsi:type="Enumerated">
+              <Name>C Library Type</Name>
+              <UniqueID>com.sysprogs.toolchainoptions.arm.libctype</UniqueID>
+              <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+              <SuggestionList>
+                <Suggestion>
+                  <UserFriendlyName>Default</UserFriendlyName>
+                  <InternalValue />
+                </Suggestion>
+                <Suggestion>
+                  <UserFriendlyName>Newlib-nano</UserFriendlyName>
+                  <InternalValue>--specs=nano.specs</InternalValue>
+                </Suggestion>
+                <Suggestion>
+                  <UserFriendlyName>Newlib-nano with floating point support in printf()</UserFriendlyName>
+                  <InternalValue>--specs=nano.specs -u _printf_float</InternalValue>
+                </Suggestion>
+                <Suggestion>
+                  <UserFriendlyName>Newlib-nano with floating point support in printf() and scanf()</UserFriendlyName>
+                  <InternalValue>--specs=nano.specs -u _printf_float -u _scanf_float</InternalValue>
+                </Suggestion>
+              </SuggestionList>
+              <DefaultEntryIndex>1</DefaultEntryIndex>
+              <AllowFreeEntry>false</AllowFreeEntry>
+            </PropertyEntry>
+            <PropertyEntry xsi:type="Enumerated">
+              <Name>Implementations for _sbrk(), etc.</Name>
+              <UniqueID>com.sysprogs.toolchainoptions.arm.libnosys</UniqueID>
+              <OmitPrefixIfEmpty>false</OmitPrefixIfEmpty>
+              <SuggestionList>
+                <Suggestion>
+                  <UserFriendlyName>None</UserFriendlyName>
+                  <InternalValue />
+                </Suggestion>
+                <Suggestion>
+                  <UserFriendlyName>Minimal (no semihosting)</UserFriendlyName>
+                  <InternalValue>--specs=nosys.specs</InternalValue>
+                </Suggestion>
+                <Suggestion>
+                  <UserFriendlyName>Support semihosting</UserFriendlyName>
+                  <InternalValue>--specs=rdimon.specs</InternalValue>
+                </Suggestion>
+              </SuggestionList>
+              <DefaultEntryIndex>1</DefaultEntryIndex>
+              <AllowFreeEntry>false</AllowFreeEntry>
+            </PropertyEntry>
+          </Properties>
+          <CollapsedByDefault>false</CollapsedByDefault>
+        </PropertyGroup>
+      </PropertyGroups>
+    </ConfigurableProperties>
+    <HierarchicalPath>Kinetis\K66F18</HierarchicalPath>
+    <FamilyID>K66F18</FamilyID>
+    <FLASHSize>2096112</FLASHSize>
+    <RAMSize>262144</RAMSize>
+    <FLASHBase>1040</FLASHBase>
+    <RAMBase>536805376</RAMBase>
+    <MCUDefinitionFile>K66F18.xml</MCUDefinitionFile>
+    <AdditionalSourcesRequiredForTesting>false</AdditionalSourcesRequiredForTesting>
+  </InPlaceMCU>
+  <MCUMakFile>kinetis.mak</MCUMakFile>
+  <ReferencedFrameworks />
+  <FrameworkProperties>
+    <Entries />
+  </FrameworkProperties>
+  <TestFrameworkProperties>
+    <Entries />
+  </TestFrameworkProperties>
+</EmbeddedProfile>

@@ -1,0 +1,298 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../../../../CMSIS/Include/cmsis_armcc.h
+
+../../../../../CMSIS/Include/cmsis_armcc_V6.h
+
+../../../../../CMSIS/Include/cmsis_gcc.h
+
+../../../../../CMSIS/Include/core_cm4.h
+stdint.h
+-
+core_cmInstr.h
+../../../../../CMSIS/Include/core_cmInstr.h
+core_cmFunc.h
+../../../../../CMSIS/Include/core_cmFunc.h
+core_cmSimd.h
+../../../../../CMSIS/Include/core_cmSimd.h
+
+../../../../../CMSIS/Include/core_cmFunc.h
+cmsis_armcc.h
+../../../../../CMSIS/Include/cmsis_armcc.h
+cmsis_armcc_V6.h
+../../../../../CMSIS/Include/cmsis_armcc_V6.h
+cmsis_gcc.h
+../../../../../CMSIS/Include/cmsis_gcc.h
+cmsis_iar.h
+-
+cmsis_ccs.h
+-
+cmsis_csm.h
+-
+
+../../../../../CMSIS/Include/core_cmInstr.h
+cmsis_armcc.h
+../../../../../CMSIS/Include/cmsis_armcc.h
+cmsis_armcc_V6.h
+../../../../../CMSIS/Include/cmsis_armcc_V6.h
+cmsis_gcc.h
+../../../../../CMSIS/Include/cmsis_gcc.h
+cmsis_iar.h
+-
+cmsis_ccs.h
+-
+cmsis_csm.h
+-
+
+../../../../../CMSIS/Include/core_cmSimd.h
+cmsis_armcc.h
+../../../../../CMSIS/Include/cmsis_armcc.h
+cmsis_armcc_V6.h
+../../../../../CMSIS/Include/cmsis_armcc_V6.h
+cmsis_gcc.h
+../../../../../CMSIS/Include/cmsis_gcc.h
+cmsis_iar.h
+-
+cmsis_ccs.h
+-
+cmsis_csm.h
+-
+
+../../../../../devices/MK66F18/MK66F18.h
+core_cm4.h
+../../../../../devices/MK66F18/core_cm4.h
+system_MK66F18.h
+../../../../../devices/MK66F18/system_MK66F18.h
+
+../../../../../devices/MK66F18/MK66F18_features.h
+
+../../../../../devices/MK66F18/drivers/fsl_clock.h
+fsl_device_registers.h
+../../../../../devices/MK66F18/drivers/fsl_device_registers.h
+stdint.h
+-
+stdbool.h
+-
+assert.h
+-
+
+../../../../../devices/MK66F18/drivers/fsl_common.h
+assert.h
+-
+stdbool.h
+-
+stdint.h
+-
+string.h
+-
+fsl_device_registers.h
+../../../../../devices/MK66F18/drivers/fsl_device_registers.h
+fsl_clock.h
+../../../../../devices/MK66F18/drivers/fsl_clock.h
+
+../../../../../devices/MK66F18/drivers/fsl_gpio.h
+fsl_common.h
+../../../../../devices/MK66F18/drivers/fsl_common.h
+
+../../../../../devices/MK66F18/drivers/fsl_lpuart.h
+fsl_common.h
+../../../../../devices/MK66F18/drivers/fsl_common.h
+
+../../../../../devices/MK66F18/drivers/fsl_port.h
+fsl_common.h
+../../../../../devices/MK66F18/drivers/fsl_common.h
+
+../../../../../devices/MK66F18/drivers/fsl_smc.h
+fsl_common.h
+../../../../../devices/MK66F18/drivers/fsl_common.h
+
+../../../../../devices/MK66F18/drivers/fsl_uart.h
+fsl_common.h
+../../../../../devices/MK66F18/drivers/fsl_common.h
+
+../../../../../devices/MK66F18/fsl_device_registers.h
+MK66F18.h
+../../../../../devices/MK66F18/MK66F18.h
+MK66F18_features.h
+../../../../../devices/MK66F18/MK66F18_features.h
+
+../../../../../devices/MK66F18/system_MK66F18.h
+stdint.h
+-
+
+../../../../../devices/MK66F18/utilities/fsl_debug_console.h
+fsl_common.h
+../../../../../devices/MK66F18/utilities/fsl_common.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/board.c
+stdint.h
+-
+fsl_device_registers.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/fsl_device_registers.h
+board.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/board.h
+fsl_debug_console.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/fsl_debug_console.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/board.h
+clock_config.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/clock_config.h
+fsl_gpio.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/fsl_gpio.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/clock_config.c
+fsl_common.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/fsl_common.h
+fsl_smc.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/fsl_smc.h
+clock_config.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/clock_config.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/clock_config.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/hello_world.c
+fsl_device_registers.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/fsl_device_registers.h
+fsl_debug_console.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/fsl_debug_console.h
+board.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/board.h
+pin_mux.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/pin_mux.h
+clock_config.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/clock_config.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/pin_mux.c
+fsl_device_registers.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/fsl_device_registers.h
+fsl_port.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/fsl_port.h
+pin_mux.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/pin_mux.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/pin_mux.h
+stdbool.h
+-
+fsl_common.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/boards/frdmk66f/demo_apps/hello_world/fsl_common.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/MK66F18.h
+core_cm4.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/core_cm4.h
+system_MK66F18.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/system_MK66F18.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/MK66F18_features.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_clock.c
+fsl_common.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_common.h
+fsl_clock.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_clock.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_clock.h
+fsl_device_registers.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_device_registers.h
+stdint.h
+-
+stdbool.h
+-
+assert.h
+-
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_common.c
+fsl_common.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_common.h
+fsl_debug_console.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_debug_console.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_common.h
+assert.h
+-
+stdbool.h
+-
+stdint.h
+-
+string.h
+-
+fsl_device_registers.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_device_registers.h
+fsl_clock.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_clock.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_gpio.c
+fsl_gpio.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_gpio.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_gpio.h
+fsl_common.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_common.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_lpuart.c
+fsl_lpuart.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_lpuart.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_lpuart.h
+fsl_common.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_common.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_smc.c
+fsl_smc.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_smc.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_smc.h
+fsl_common.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_common.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_uart.c
+fsl_uart.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_uart.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_uart.h
+fsl_common.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/drivers/fsl_common.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/fsl_device_registers.h
+MK66F18.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/MK66F18.h
+MK66F18_features.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/MK66F18_features.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/system_MK66F18.c
+stdint.h
+-
+fsl_device_registers.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/fsl_device_registers.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/system_MK66F18.h
+stdint.h
+-
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/utilities/fsl_debug_console.c
+stdarg.h
+-
+stdlib.h
+-
+stdio.h
+-
+math.h
+-
+fsl_debug_console.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/utilities/fsl_debug_console.h
+fsl_uart.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/utilities/fsl_uart.h
+fsl_lpsci.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/utilities/fsl_lpsci.h
+fsl_lpuart.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/utilities/fsl_lpuart.h
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/utilities/fsl_debug_console.h
+fsl_common.h
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/utilities/fsl_common.h
+

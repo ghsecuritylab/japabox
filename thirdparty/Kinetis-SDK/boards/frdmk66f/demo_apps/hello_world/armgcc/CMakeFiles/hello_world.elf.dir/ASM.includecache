@@ -1,0 +1,10 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Hitesh Rai/Documents/Ibis/K66/SDK_2.0_FRDM-K66F/devices/MK66F18/gcc/startup_MK66F18.S
+

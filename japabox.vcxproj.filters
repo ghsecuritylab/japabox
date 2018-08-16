@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source files">
+      <UniqueIdentifier>{5a0af5c6-f8d6-4022-9ea4-f3f40ea24576}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header files">
+      <UniqueIdentifier>{a14099cd-feb7-457c-8722-50a10ec17462}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource files">
+      <UniqueIdentifier>{f2807684-e329-4614-b630-16ad26776c3f}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Source files\Device-specific files">
+      <UniqueIdentifier>{454b2c48-b4d3-42d2-8e17-324278995bd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header files\Device-specific files">
+      <UniqueIdentifier>{3ae96e9f-68c6-4af0-b437-5b2dfd71d435}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="VisualGDB settings">
+      <UniqueIdentifier>{f5e9ca71-a9e4-417a-87f0-fb81d7fc4703}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\app">
+      <UniqueIdentifier>{48b011da-94af-42df-bd5b-26b707a23d92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\drivers">
+      <UniqueIdentifier>{6016318a-b981-4f0e-9ace-fa20e278510f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\thirdparty">
+      <UniqueIdentifier>{79715ceb-0818-44ea-b13f-ed42453584d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source files\drivers\K66">
+      <UniqueIdentifier>{55d1334b-1fcd-4c0e-8cb6-d6ee10854d83}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="kinetis.props">
+      <Filter>Source files\Device-specific files</Filter>
+    </None>
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\arm_common_tables.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\arm_const_structs.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\arm_math.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\core_cm0plus.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\core_cm4.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\core_cm7.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\core_cmFunc.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\core_cmInstr.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\core_cmSimd.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\devices\fsl_device_registers.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\devices\MK66F18\include\fsl_bitaccess.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\devices\MK66F18\include\MK66F18.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\devices\MK66F18\include\MK66F18_extension.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\devices\MK66F18\include\MK66F18_features.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(BSP_ROOT)\platform\devices\MK66F18\startup\system_MK66F18.h">
+      <Filter>Header files\Device-specific files</Filter>
+    </ClInclude>
+    <None Include="japabox-Debug.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="japabox-Release.vgdbsettings">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+    <None Include="kinetis.xml">
+      <Filter>VisualGDB settings</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="app\main.c">
+      <Filter>Source files\app</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\system_MK66F18.c">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\gcc\startup_MK66F18.S">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\middleware\usb_1.0.0\device\usb_device_dci.c">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\middleware\usb_1.0.0\device\usb_device_ehci.c">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\middleware\usb_1.0.0\device\usb_device_khci.c">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\middleware\usb_1.0.0\phy\usb_phy.c">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\middleware\usb_1.0.0\osa\usb_osa_bm.c">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_uart.c">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_lpuart.c">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_common.c">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_mpu.c">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_sim.c">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_clock.c">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\utilities\fsl_debug_console.c">
+      <Filter>Source files\thirdparty</Filter>
+    </ClCompile>
+    <ClCompile Include="drivers\K66\board.c">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClCompile>
+    <ClCompile Include="drivers\K66\clock_config.c">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClCompile>
+    <ClCompile Include="drivers\K66\hardware.c">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClCompile>
+    <ClCompile Include="drivers\K66\pin_mux.c">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClCompile>
+    <ClCompile Include="drivers\K66\usb_cdc.c">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClCompile>
+    <ClCompile Include="drivers\K66\usb_device_cdc_acm.c">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClCompile>
+    <ClCompile Include="drivers\K66\usb_device_ch9.c">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClCompile>
+    <ClCompile Include="drivers\K66\usb_device_descriptor.c">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClCompile>
+    <ClCompile Include="drivers\K66\clock.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_lptmr.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="app\packet_manager.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="drivers\K66\spi.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="drivers\K66\analog.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_dspi.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_gpio.c">
+      <Filter>Source files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="drivers\usb_cdc.h">
+      <Filter>Source files\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="drivers\hardware.h">
+      <Filter>Source files\drivers</Filter>
+    </ClInclude>
+    <ClInclude Include="drivers\K66\board.h">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClInclude>
+    <ClInclude Include="drivers\K66\clock_config.h">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClInclude>
+    <ClInclude Include="drivers\K66\pin_mux.h">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClInclude>
+    <ClInclude Include="drivers\K66\usb_device_cdc_acm.h">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClInclude>
+    <ClInclude Include="drivers\K66\usb_device_ch9.h">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClInclude>
+    <ClInclude Include="drivers\K66\usb_device_config.h">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClInclude>
+    <ClInclude Include="drivers\K66\usb_device_descriptor.h">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClInclude>
+    <ClInclude Include="drivers\K66\virtual_com.h">
+      <Filter>Source files\drivers\K66</Filter>
+    </ClInclude>
+    <ClInclude Include="drivers\clock.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="app\packet_manager.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="drivers\K66\spi.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="drivers\analog.h">
+      <Filter>Header files</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

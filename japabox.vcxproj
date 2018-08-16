@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|VisualGDB">
+      <Configuration>Debug</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|VisualGDB">
+      <Configuration>Release</Configuration>
+      <Platform>VisualGDB</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{15F5C45A-5A41-4464-B894-A15930AD98A3}</ProjectGuid>
+    <BSP_ID>com.visualgdb.bsp.in-place</BSP_ID>
+    <BSP_VERSION>1.0</BSP_VERSION>
+    <InPlaceBSPSubdir>BSP</InPlaceBSPSubdir>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)kinetis.props</MCUPropertyListFile>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <MCUPropertyListFile>$(ProjectDir)kinetis.props</MCUPropertyListFile>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <GNUConfigurationType>Debug</GNUConfigurationType>
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>7.2.0/8.0.1/r3</ToolchainVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|VisualGDB'">
+    <ToolchainID>com.visualgdb.arm-eabi</ToolchainID>
+    <ToolchainVersion>7.2.0/8.0.1/r3</ToolchainVersion>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|VisualGDB'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>thirdparty/Kinetis-SDK/devices/MK66F18/drivers;thirdparty/Kinetis-SDK/devices/MK66F18/utilities;thirdparty/Kinetis-SDK/middleware/usb_1.0.0/device;thirdparty/Kinetis-SDK/middleware/usb_1.0.0/include;thirdparty/Kinetis-SDK/middleware/usb_1.0.0/osa;thirdparty/Kinetis-SDK/middleware/usb_1.0.0/phy;app;%(ClCompile.AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG=1;_DEBUG=1;USB_STACK_BM;CPU_MK66FN2M0VMD18;FRDM_K66F;FREEDOM;__STARTUP_CLEAR_BSS;%(ClCompile.PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalOptions />
+      <CLanguageStandard />
+      <CPPLanguageStandard />
+    </ClCompile>
+    <Link>
+      <LibrarySearchDirectories>;%(Link.LibrarySearchDirectories)</LibrarySearchDirectories>
+      <AdditionalLibraryNames>;%(Link.AdditionalLibraryNames)</AdditionalLibraryNames>
+      <AdditionalLinkerInputs>;%(Link.AdditionalLinkerInputs)</AdditionalLinkerInputs>
+      <LinkerScript />
+      <AdditionalOptions />
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ItemGroup>
+    <ClCompile Include="app\main.c" />
+    <ClCompile Include="app\packet_manager.c" />
+    <ClCompile Include="drivers\K66\analog.c" />
+    <ClCompile Include="drivers\K66\board.c" />
+    <ClCompile Include="drivers\K66\clock.c" />
+    <ClCompile Include="drivers\K66\clock_config.c" />
+    <ClCompile Include="drivers\K66\hardware.c" />
+    <ClCompile Include="drivers\K66\pin_mux.c" />
+    <ClCompile Include="drivers\K66\spi.c" />
+    <ClCompile Include="drivers\K66\usb_cdc.c" />
+    <ClCompile Include="drivers\K66\usb_device_cdc_acm.c" />
+    <ClCompile Include="drivers\K66\usb_device_ch9.c" />
+    <ClCompile Include="drivers\K66\usb_device_descriptor.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_dspi.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_gpio.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_lptmr.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\gcc\startup_MK66F18.S" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\system_MK66F18.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_clock.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_common.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_lpuart.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_mpu.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_sim.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_uart.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\utilities\fsl_debug_console.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\middleware\usb_1.0.0\device\usb_device_dci.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\middleware\usb_1.0.0\device\usb_device_ehci.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\middleware\usb_1.0.0\device\usb_device_khci.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\middleware\usb_1.0.0\osa\usb_osa_bm.c" />
+    <ClCompile Include="thirdparty\Kinetis-SDK\middleware\usb_1.0.0\phy\usb_phy.c" />
+    <ClInclude Include="app\packet_manager.h" />
+    <ClInclude Include="drivers\analog.h" />
+    <ClInclude Include="drivers\clock.h" />
+    <ClInclude Include="drivers\hardware.h" />
+    <ClInclude Include="drivers\K66\board.h" />
+    <ClInclude Include="drivers\K66\clock_config.h" />
+    <ClInclude Include="drivers\K66\pin_mux.h" />
+    <ClInclude Include="drivers\K66\spi.h" />
+    <ClInclude Include="drivers\K66\usb_device_cdc_acm.h" />
+    <ClInclude Include="drivers\K66\usb_device_ch9.h" />
+    <ClInclude Include="drivers\K66\usb_device_config.h" />
+    <ClInclude Include="drivers\K66\usb_device_descriptor.h" />
+    <ClInclude Include="drivers\K66\virtual_com.h" />
+    <ClInclude Include="drivers\usb_cdc.h" />
+    <None Include="kinetis.props" />
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\arm_common_tables.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\arm_const_structs.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\arm_math.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\core_cm0plus.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\core_cm4.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\core_cm7.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\core_cmFunc.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\core_cmInstr.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\CMSIS\Include\core_cmSimd.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\devices\fsl_device_registers.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\devices\MK66F18\include\fsl_bitaccess.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\devices\MK66F18\include\MK66F18.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\devices\MK66F18\include\MK66F18_extension.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\devices\MK66F18\include\MK66F18_features.h" />
+    <ClInclude Include="$(BSP_ROOT)\platform\devices\MK66F18\startup\system_MK66F18.h" />
+    <None Include="japabox-Debug.vgdbsettings" />
+    <None Include="japabox-Release.vgdbsettings" />
+    <None Include="kinetis.xml" />
+  </ItemGroup>
+</Project>
