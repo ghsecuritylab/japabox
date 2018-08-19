@@ -1,9 +1,12 @@
 /*
+ * The Clear BSD License
  * Copyright (c) 2015, Freescale Semiconductor, Inc.
+ * Copyright 2016-2017 NXP
  * All rights reserved.
- *
+ * 
  * Redistribution and use in source and binary forms, with or without modification,
- * are permitted provided that the following conditions are met:
+ * are permitted (subject to the limitations in the disclaimer below) provided
+ *  that the following conditions are met:
  *
  * o Redistributions of source code must retain the above copyright notice, this list
  *   of conditions and the following disclaimer.
@@ -12,10 +15,11 @@
  *   list of conditions and the following disclaimer in the documentation and/or
  *   other materials provided with the distribution.
  *
- * o Neither the name of Freescale Semiconductor, Inc. nor the names of its
+ * o Neither the name of the copyright holder nor the names of its
  *   contributors may be used to endorse or promote products derived from this
  *   software without specific prior written permission.
  *
+ * NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY THIS LICENSE.
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
  * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
  * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
@@ -33,11 +37,10 @@
 #include "fsl_common.h"
 
 /*!
- * @addtogroup ftm_driver
+ * @addtogroup ftm
  * @{
  */
 
-/*! @file */
 
 /*******************************************************************************
  * Definitions
@@ -45,8 +48,8 @@
 
 /*! @name Driver version */
 /*@{*/
-#define FSL_FTM_DRIVER_VERSION (MAKE_VERSION(2, 0, 0)) /*!< Version 2.0.0 */
-/*@}*/
+#define FSL_FTM_DRIVER_VERSION (MAKE_VERSION(2, 0, 4)) /*!< Version 2.0.4 */
+                                                       /*@}*/
 
 /*!
  * @brief List of FTM channels
@@ -162,7 +165,7 @@ typedef struct _ftm_phase_param
 typedef struct _ftm_fault_param
 {
     bool enableFaultInput; /*!< True: Fault input is enabled; false: Fault input is disabled */
-    bool faultLevel;       /*!< True: Fault polarity is active low i.e '0' indicates a fault;
+    bool faultLevel;       /*!< True: Fault polarity is active low; in other words, '0' indicates a fault;
                                 False: Fault polarity is active high */
     bool useFaultFilter;   /*!< True: Use the filtered fault signal;
                                 False: Use the direct path from fault input */
@@ -310,6 +313,19 @@ typedef enum _ftm_status_flags
     kFTM_ReloadFlag = (1U << 11)       /*!< Reload Flag; Available only on certain SoC's */
 } ftm_status_flags_t;
 
+#if !(defined(FSL_FEATURE_FTM_HAS_NO_QDCTRL) && FSL_FEATURE_FTM_HAS_NO_QDCTRL)
+/*!
+ * @brief List of FTM Quad Decoder flags.
+ */
+enum _ftm_quad_decoder_flags
+{
+    kFTM_QuadDecoderCountingIncreaseFlag = FTM_QDCTRL_QUADIR_MASK, /*!< Counting direction is increasing (FTM counter
+                                                                        increment), or the direction is decreasing. */
+    kFTM_QuadDecoderCountingOverflowOnTopFlag = FTM_QDCTRL_TOFDIR_MASK, /*!< Indicates if the TOF bit was set on the top
+                                                                             or the bottom of counting. */
+};
+#endif
+
 /*!
  * @brief FTM configuration structure
  *
@@ -333,7 +349,9 @@ typedef struct _ftm_config
     ftm_fault_mode_t faultMode;               /*!< FTM fault control mode */
     uint8_t faultFilterValue;                 /*!< Fault input filter value */
     ftm_deadtime_prescale_t deadTimePrescale; /*!< The dead time prescalar value */
-    uint8_t deadTimeValue;                    /*!< The dead time value */
+    uint32_t deadTimeValue;                   /*!< The dead time value
+                                                   deadTimeValue's available range is 0-1023 when register has DTVALEX,
+                                                   otherwise its available range is 0-63. */
     uint32_t extTriggers;                     /*!< External triggers to enable. Multiple trigger sources can be
                                                    enabled by providing an OR'ed list of options available in
                                                    enumeration ::ftm_external_trigger_t. */
@@ -359,7 +377,7 @@ extern "C" {
 /*!
  * @brief Ungates the FTM clock and configures the peripheral for basic operation.
  *
- * @note This API should be called at the beginning of the application using the FTM driver.
+ * @note This API should be called at the beginning of the application which is using the FTM driver.
  *
  * @param base   FTM peripheral base address
  * @param config Pointer to the user configuration structure.
@@ -509,19 +527,6 @@ void FTM_SetupDualEdgeCapture(FTM_Type *base,
 /*! @}*/
 
 /*!
- * @brief Configures the parameters and activates the quadrature decoder mode.
- *
- * @param base         FTM peripheral base address
- * @param phaseAParams Phase A configuration parameters
- * @param phaseBParams Phase B configuration parameters
- * @param quadMode     Selects encoding mode used in quadrature decoder mode
- */
-void FTM_SetupQuadDecode(FTM_Type *base,
-                         const ftm_phase_params_t *phaseAParams,
-                         const ftm_phase_params_t *phaseBParams,
-                         ftm_quad_decode_mode_t quadMode);
-
-/*!
  * @brief Sets up the working of the FTM fault protection.
  *
  * FTM can have up to 4 fault inputs. This function sets up fault parameters, fault level, and a filter.
@@ -593,6 +598,48 @@ void FTM_ClearStatusFlags(FTM_Type *base, uint32_t mask);
 
 /*! @}*/
 
+/*!
+ * @name Read and write the timer period
+ * @{
+ */
+
+/*!
+ * @brief Sets the timer period in units of ticks.
+ *
+ * Timers counts from 0 until it equals the count value set here. The count value is written to
+ * the MOD register.
+ *
+ * @note
+ * 1. This API allows the user to use the FTM module as a timer. Do not mix usage
+ *    of this API with FTM's PWM setup API's.
+ * 2. Call the utility macros provided in the fsl_common.h to convert usec or msec to ticks.
+ *
+ * @param base FTM peripheral base address
+ * @param ticks A timer period in units of ticks, which should be equal or greater than 1.
+ */
+static inline void FTM_SetTimerPeriod(FTM_Type *base, uint32_t ticks)
+{
+    base->MOD = ticks;
+}
+
+/*!
+ * @brief Reads the current timer counting value.
+ *
+ * This function returns the real-time timer counting value in a range from 0 to a
+ * timer period.
+ *
+ * @note Call the utility macros provided in the fsl_common.h to convert ticks to usec or msec.
+ *
+ * @param base FTM peripheral base address
+ *
+ * @return The current counter value in ticks
+ */
+static inline uint32_t FTM_GetCurrentTimerCount(FTM_Type *base)
+{
+    return (uint32_t)((base->CNT & FTM_CNT_COUNT_MASK) >> FTM_CNT_COUNT_SHIFT);
+}
+
+/*! @}*/
 /*!
  * @name Timer Start and Stop
  * @{
@@ -711,7 +758,7 @@ static inline void FTM_SetOutputMask(FTM_Type *base, ftm_chnl_t chnlNumber, bool
 
 #if defined(FSL_FEATURE_FTM_HAS_ENABLE_PWM_OUTPUT) && (FSL_FEATURE_FTM_HAS_ENABLE_PWM_OUTPUT)
 /*!
- * @brief Allows user to enable an output on an FTM channel.
+ * @brief Allows users to enable an output on an FTM channel.
  *
  * To enable the PWM channel output call this function with val=true. For input mode,
  * call this function with val=false.
@@ -817,6 +864,78 @@ static inline void FTM_SetInvertEnable(FTM_Type *base, ftm_chnl_t chnlPairNumber
 /*! @}*/
 
 /*!
+ * @name Quad Decoder
+ * @{
+ */
+
+/*!
+ * @brief Configures the parameters and activates the quadrature decoder mode.
+ *
+ * @param base         FTM peripheral base address
+ * @param phaseAParams Phase A configuration parameters
+ * @param phaseBParams Phase B configuration parameters
+ * @param quadMode     Selects encoding mode used in quadrature decoder mode
+ */
+void FTM_SetupQuadDecode(FTM_Type *base,
+                         const ftm_phase_params_t *phaseAParams,
+                         const ftm_phase_params_t *phaseBParams,
+                         ftm_quad_decode_mode_t quadMode);
+
+#if !(defined(FSL_FEATURE_FTM_HAS_NO_QDCTRL) && FSL_FEATURE_FTM_HAS_NO_QDCTRL)
+/*!
+ * @brief Gets the FTM Quad Decoder flags.
+ *
+ * @param base FTM peripheral base address.
+ * @return Flag mask of FTM Quad Decoder, see #_ftm_quad_decoder_flags.
+ */
+static inline uint32_t FTM_GetQuadDecoderFlags(FTM_Type *base)
+{
+    return base->QDCTRL & (FTM_QDCTRL_QUADIR_MASK | FTM_QDCTRL_TOFDIR_MASK);
+}
+#endif
+
+/*!
+ * @brief Sets the modulo values for Quad Decoder.
+ *
+ * The modulo values configure the minimum and maximum values that the Quad decoder counter can reach. After the counter goes
+ * over, the counter value goes to the other side and decrease/increase again.
+ *
+ * @param base FTM peripheral base address.
+ * @param startValue The low limit value for Quad Decoder counter.
+ * @param overValue The high limit value for Quad Decoder counter.
+ */
+static inline void FTM_SetQuadDecoderModuloValue(FTM_Type *base, uint32_t startValue, uint32_t overValue)
+{
+    base->CNTIN = startValue;
+    base->MOD = overValue;
+}
+
+/*!
+ * @brief Gets the current Quad Decoder counter value.
+ *
+ * @param base FTM peripheral base address.
+ * @return Current quad Decoder counter value.
+ */
+static inline uint32_t FTM_GetQuadDecoderCounterValue(FTM_Type *base)
+{
+    return base->CNT;
+}
+
+/*!
+ * @brief Clears the current Quad Decoder counter value.
+ *
+ * The counter is set as the initial value.
+ *
+ * @param base FTM peripheral base address.
+ */
+static inline void FTM_ClearQuadDecoderCounterValue(FTM_Type *base)
+{
+    base->CNT = base->CNTIN;
+}
+
+/*! @}*/
+
+/*!
  * @brief Enables or disables the FTM software trigger for PWM synchronization.
  *
  * @param base   FTM peripheral base address
@@ -852,6 +971,33 @@ static inline void FTM_SetWriteProtection(FTM_Type *base, bool enable)
         base->MODE |= FTM_MODE_WPDIS_MASK;
     }
 }
+
+#if defined(FSL_FEATURE_FTM_HAS_DMA_SUPPORT) && FSL_FEATURE_FTM_HAS_DMA_SUPPORT
+/*!
+ * @brief Enable DMA transfer or not.
+ *
+ * Note: CHnIE bit needs to be set when calling this API. The channel DMA transfer request 
+ * is generated and the channel interrupt is not generated if (CHnF = 1) when DMA and CHnIE 
+ * bits are set.
+ *
+ * @param base   FTM peripheral base address.
+ * @param chnlNumber Channel to be configured
+ * @param enable true to enable, false to disable
+ */
+static inline void FTM_EnableDmaTransfer(FTM_Type *base, ftm_chnl_t chnlNumber, bool enable)
+{
+    if (enable)
+    {
+        /* Enable DMA transfer */
+        base->CONTROLS[chnlNumber].CnSC |= FTM_CnSC_DMA_MASK;
+    }
+    else
+    {
+        /* Disable DMA transfer */
+        base->CONTROLS[chnlNumber].CnSC &= ~FTM_CnSC_DMA_MASK;
+    }
+}
+#endif /* FSL_FEATURE_FTM_HAS_DMA_SUPPORT */
 
 #if defined(__cplusplus)
 }
