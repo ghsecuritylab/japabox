@@ -137,9 +137,6 @@
     <ClCompile Include="drivers\K66\clock.c">
       <Filter>Source files\drivers\K66</Filter>
     </ClCompile>
-    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_dspi.c">
-      <Filter>Source files\thirdparty</Filter>
-    </ClCompile>
     <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_gpio.c">
       <Filter>Source files\thirdparty</Filter>
     </ClCompile>
@@ -147,15 +144,6 @@
       <Filter>Source files\thirdparty</Filter>
     </ClCompile>
     <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_sai.c">
-      <Filter>Source files\thirdparty</Filter>
-    </ClCompile>
-    <ClCompile Include="drivers\K66\fsl_codec_common.c">
-      <Filter>Source files\drivers\K66</Filter>
-    </ClCompile>
-    <ClCompile Include="drivers\K66\fsl_dialog7212.c">
-      <Filter>Source files\drivers\K66</Filter>
-    </ClCompile>
-    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_i2c.c">
       <Filter>Source files\thirdparty</Filter>
     </ClCompile>
   </ItemGroup>
@@ -171,12 +159,6 @@
     </ClInclude>
     <ClInclude Include="drivers\clock.h">
       <Filter>Source files\drivers</Filter>
-    </ClInclude>
-    <ClInclude Include="drivers\K66\fsl_codec_common.h">
-      <Filter>Source files\drivers\K66</Filter>
-    </ClInclude>
-    <ClInclude Include="drivers\K66\fsl_dialog7212.h">
-      <Filter>Source files\drivers\K66</Filter>
     </ClInclude>
     <ClInclude Include="drivers\K66\music.h">
       <Filter>Source files\drivers\K66</Filter>

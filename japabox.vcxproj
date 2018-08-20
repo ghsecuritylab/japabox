@@ -65,12 +65,8 @@
     <ClCompile Include="drivers\K66\board.c" />
     <ClCompile Include="drivers\K66\clock.c" />
     <ClCompile Include="drivers\K66\clock_config.c" />
-    <ClCompile Include="drivers\K66\fsl_codec_common.c" />
-    <ClCompile Include="drivers\K66\fsl_dialog7212.c" />
     <ClCompile Include="drivers\K66\pin_mux.c" />
-    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_dspi.c" />
     <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_gpio.c" />
-    <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_i2c.c" />
     <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_lptmr.c" />
     <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\drivers\fsl_sai.c" />
     <ClCompile Include="thirdparty\Kinetis-SDK\devices\MK66F18\gcc\startup_MK66F18.S" />
@@ -85,8 +81,6 @@
     <ClInclude Include="drivers\clock.h" />
     <ClInclude Include="drivers\K66\board.h" />
     <ClInclude Include="drivers\K66\clock_config.h" />
-    <ClInclude Include="drivers\K66\fsl_codec_common.h" />
-    <ClInclude Include="drivers\K66\fsl_dialog7212.h" />
     <ClInclude Include="drivers\K66\music.h" />
     <ClInclude Include="drivers\K66\pin_mux.h" />
     <None Include="kinetis.props" />
